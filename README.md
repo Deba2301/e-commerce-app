@@ -219,13 +219,5 @@ const API_URL = "https://your-api-endpoint.com";
    - Delete `node_modules` and `package-lock.json`
    - Run `npm install` again
 
-3. **Cypress connection issues**
 
-   - Ensure the development server is running
-   - Check Windows Firewall settings
-   - Try running as administrator
-
-4. **API not loading products**
-   - Check internet connection
-   - Verify FakeStore API is accessible: https://fakestoreapi.com/products
 
