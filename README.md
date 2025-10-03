@@ -106,7 +106,6 @@ react-ecommerce-app/
 
 ### Home Page (`/`)
 
-- Modern, Wix-inspired product grid with clean typography
 - Displays products fetched from FakeStore API
 - Hover effects and smooth animations
 - Responsive design adapting to all screen sizes
