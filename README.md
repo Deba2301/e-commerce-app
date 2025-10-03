@@ -1,70 +1,256 @@
-# Getting Started with Create React App
+# React E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive e-commerce web application built with React, featuring product browsing, detailed product views, and shopping cart functionality.
 
-## Available Scripts
+## 🛒 Features
 
-In the project directory, you can run:
+- **Product Listing**: Browse products in a clean, modern grid layout
+- **Product Details**: View detailed product information with images and descriptions
+- **Shopping Cart**: Complete cart management with add, remove, and quantity controls
+- **Cart Management**: Dedicated cart page with item removal and quantity adjustment
+- **Navigation**: Seamless routing between pages with React Router
+- **Modern Design**: Wix-inspired clean, minimalist styling
+- **Responsive Design**: Mobile-friendly interface with inline CSS
+- **State Management**: MobX for reactive cart state with session storage persistence
+- **API Integration**: Real product data from FakeStore API
+- **E2E Testing**: Cypress testing framework setup
 
-### `npm start`
+## 🚀 Quick Start
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Prerequisites
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Make sure you have the following installed:
 
-### `npm test`
+- **Node.js** (version 14 or higher)
+- **npm** (comes with Node.js)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installation & Setup
 
-### `npm run build`
+1. **Clone or navigate to the project directory**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+   ```bash
+   cd react-ecommerce-app
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   ```bash
+   npm install
+   ```
 
-### `npm run eject`
+3. **Start the development server**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. **Open your browser**
+   - The application will automatically open at `http://localhost:3000`
+   - If it doesn't open automatically, navigate to the URL manually
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 📋 Available Scripts
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+| Command            | Description                         |
+| ------------------ | ----------------------------------- |
+| `npm start`        | Runs the app in development mode    |
+| `npm run build`    | Builds the app for production       |
+| `npm test`         | Launches the test runner            |
+| `npx cypress open` | Opens Cypress testing interface     |
+| `npx cypress run`  | Runs Cypress tests in headless mode |
 
-## Learn More
+## 🏗️ Project Structure
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+react-ecommerce-app/
+├── public/
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── api/
+│   │   └── productService.js  # FakeStore API integration
+│   ├── components/
+│   │   └── Footer.js          # Interactive cart summary footer
+│   ├── pages/
+│   │   ├── CartPage.js        # Shopping cart management page
+│   │   ├── HomePage.js        # Product listing with modern grid
+│   │   └── ProductDetailPage.js # Product detail view
+│   ├── store/
+│   │   └── CartStore.js       # MobX cart state with CRUD operations
+│   ├── App.css               # Global modern styling
+│   ├── App.js                # Main app component & routing
+│   ├── index.css             # Base styles
+│   └── index.js              # Clean app entry point
+├── cypress/
+│   ├── e2e/
+│   │   ├── basic.cy.js        # Basic Cypress functionality tests
+│   │   └── ecommerce.cy.js    # E-commerce specific tests
+│   └── support/               # Cypress support files
+├── cypress.config.js
+├── package.json
+└── README.md
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🛠️ Technology Stack
 
-### Code Splitting
+- **Frontend Framework**: React 18.2.0 (Class Components)
+- **Routing**: React Router DOM 6.8.1
+- **State Management**: MobX 6.15.0
+- **HTTP Client**: Axios 1.12.2
+- **Testing**: Cypress 15.3.0
+- **Styling**: Inline CSS (Mobile Responsive)
+- **API**: FakeStore API (https://fakestoreapi.com/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## 📱 Application Features
 
-### Analyzing the Bundle Size
+### Home Page (`/`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Modern, Wix-inspired product grid with clean typography
+- Displays products fetched from FakeStore API
+- Hover effects and smooth animations
+- Responsive design adapting to all screen sizes
+- Click any product to navigate to detail page
 
-### Making a Progressive Web App
+### Product Detail Page (`/product/:id/details`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Split layout with product image and details
+- Full product information including description and pricing
+- "Add to Cart" functionality with user feedback
+- Clean, modern styling with professional typography
+- Navigation back to collection
 
-### Advanced Configuration
+### Shopping Cart Page (`/cart`)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Dedicated cart management interface
+- Individual item quantity controls (+ and - buttons)
+- Remove specific items with confirmation
+- Clear entire cart functionality
+- Real-time total calculation
+- Empty cart state with helpful messaging
+- Continue shopping navigation
 
-### Deployment
+### Cart Footer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Persistent cart summary at bottom of all pages
+- Shows item count and total value
+- Clickable to navigate to cart page
+- Modern styling with hover effects
 
-### `npm run build` fails to minify
+## 🧪 Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Running E2E Tests
+
+1. **Start the development server**
+
+   ```bash
+   npm start
+   ```
+
+2. **Run Cypress tests (in a new terminal)**
+
+   ```bash
+   # Interactive mode
+   npx cypress open
+
+   # Headless mode
+   npx cypress run
+   ```
+
+### Test Coverage
+
+- Basic Cypress framework functionality
+- Application component testing setup
+- User journey testing (browsing, viewing products, cart functionality)
+
+## 🎨 Design & Styling
+
+### Design System
+- **Inspiration**: Modern Wix e-commerce aesthetic
+- **Typography**: Helvetica Neue font family with proper hierarchy
+- **Color Palette**: Clean whites, subtle grays (#666, #333)
+- **Layout**: Minimalist approach with generous white space
+- **Components**: Borderless cards with subtle hover animations
+
+### Responsive Design
+- **Desktop**: Multi-column grid with optimal spacing
+- **Tablet**: Responsive grid adapting to screen width
+- **Mobile**: Single column layout with touch-friendly controls
+- **Cross-browser**: Compatible with modern browsers
+
+### User Experience
+- **Navigation**: Intuitive routing with clear visual feedback
+- **Interactions**: Smooth hover states and transitions
+- **Accessibility**: Keyboard navigation and focus states
+- **Performance**: Optimized images and efficient rendering
+
+## 🔧 Configuration
+
+### Environment Variables
+
+The application uses the default Create React App configuration. To run on a different port:
+
+```bash
+# Windows PowerShell
+$env:PORT=3001; npm start
+
+# macOS/Linux
+PORT=3001 npm start
+```
+
+### API Configuration
+
+The application uses FakeStore API by default. To modify the API endpoint, update `src/api/productService.js`:
+
+```javascript
+const API_URL = "https://your-api-endpoint.com";
+```
+
+## 🎯 Requirements Fulfilled
+
+This project fulfills and exceeds the following technical requirements:
+
+### Core Requirements
+- ✅ React Class Components architecture
+- ✅ React Router DOM for navigation
+- ✅ MobX reactive state management
+- ✅ FakeStore API integration
+- ✅ Mobile-responsive inline CSS styling
+- ✅ Cypress E2E testing framework
+- ✅ Session storage cart persistence
+- ✅ No TypeScript implementation
+- ✅ Clean, focused functionality
+
+### Enhanced Features
+- ✅ Modern Wix-inspired design system
+- ✅ Complete cart CRUD operations (Create, Read, Update, Delete)
+- ✅ Dedicated cart management page
+- ✅ Professional typography and spacing
+- ✅ Smooth animations and hover effects
+- ✅ Comprehensive user experience
+- ✅ Production-ready code structure
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+1. **Port already in use**
+
+   - Kill existing processes: `Get-Process -Name "node" | Stop-Process -Force` (Windows)
+   - Or use a different port: `$env:PORT=3001; npm start`
+
+2. **Dependencies not installing**
+
+   - Delete `node_modules` and `package-lock.json`
+   - Run `npm install` again
+
+3. **Cypress connection issues**
+
+   - Ensure the development server is running
+   - Check Windows Firewall settings
+   - Try running as administrator
+
+4. **API not loading products**
+   - Check internet connection
+   - Verify FakeStore API is accessible: https://fakestoreapi.com/products
+
